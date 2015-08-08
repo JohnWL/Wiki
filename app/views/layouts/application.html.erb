@@ -14,5 +14,12 @@
 
 <%= yield %>
 
+<ul>
+  <li><%= link_to "Home", root_path %></li>
+      <% Category.all.each do |category| %>
+        <li><%= link_to category.name, articles_path(category: category.name) %></li>
+      <% end %>
+</ul>
+
 </body>
 </html>
