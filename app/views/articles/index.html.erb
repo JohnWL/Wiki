@@ -6,4 +6,6 @@
   <p><%= truncate(a.content, length: 200) %></p>
 <% end %>
 
+<% if user_signed_in? %>
 <%= link_to "Add Article", new_article_path %>
+<% end %>
