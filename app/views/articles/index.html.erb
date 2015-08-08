@@ -1,2 +1,9 @@
 <h1>articles#index file</h1>
+
+<% @articles.each do |a| %>
+  <h2><%= a.title %></h2>
+  <p>Created on <%= a.created_at.strftime('%b %e, %Y') %></p>
+  <p><%= truncate(a.content, length: 200) %></p>
+<% end %>
+
 <%= link_to "Add Article", new_article_path %>
